@@ -705,7 +705,9 @@
 </div>
 <main id="main" class="main">
     <div class="wp-content">
+                                        {% for pro in product %}
         <div class="container-fluid">
+
             <div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                     <div class="col-md-4">
@@ -713,15 +715,18 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title">Haircut course.</h5>
-                            <p class="card-text">A haircut course is a type of training program that teaches individuals the skills and techniques needed to cut hair professionally. The course may cover a variety of topics, including hair cutting techniques, styling, hair care and maintenance, and customer service.</p>
-                            <p class="card-text"><small class="text-muted">The duration of the course is 2 weeks.</small></p>
+                            <h5 class="card-title">{{pro.title|truncatewords:5}}</h5>
+                            <p class="card-text">{{pro.content|safe|linebreaks|truncatewords:25}}</p>
+                            <p class="card-text"><small class="text-muted">Course duration Hours: {{pro.hour}} Minutes: {{pro.minutes}}</small></p>
+                            <p class="card-text"><h5>{{pro.price}} STEEM</h5></p>
+                            <a href="#" class="action-button shadow animate red">Buy</a>
                             <a href="#" class="action-button shadow animate yellow">More</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+                                {% endfor %}
     </div>
 </main>
 <script src="{% static 'market/js/jquery-3.2.1.slim.min.js' %}"></script>
