@@ -1,12 +1,16 @@
 from django.core.validators import MaxValueValidator
 from django.db import models
+from django.urls import reverse_lazy
 from django.utils import timezone
 
 # Create your models here.
 class Category(models.Model):
     title = models.CharField(max_length=250, db_index=True, verbose_name='Category')
-    slug = models.SlugField(max_length=250, verbose_name='Url Category', unique=True)
+    slug = models.SlugField(max_length=250, verbose_name='Categorys', unique=True)
     imgcat = models.ImageField(upload_to='imgcategory/%Y/%m/%d/', verbose_name='Photo Category', blank=True)
+
+    def get_absolute_url(self):
+        return reverse_lazy('category', kwargs={"slug": self.slug})
 
     def __str__(self):
         return self.title
@@ -15,12 +19,18 @@ class Tag(models.Model):
     title = models.CharField(max_length=50, db_index=True, verbose_name='Tag')
     slug = models.SlugField(max_length=50, verbose_name='Url Tag', unique=True)
 
+    def get_absolute_url(self):
+        return reverse_lazy('tag', kwargs={"slug": self.slug})
+
     def __str__(self):
         return self.title
 
 class LevelofDifficulty(models.Model):
     title = models.CharField(max_length=50, db_index=True, verbose_name='Level of difficulty')
     slug = models.SlugField(max_length=50, verbose_name='Url Level of difficulty', unique=True)
+
+    def get_absolute_url(self):
+        return reverse_lazy('levelofdifficulty', kwargs={"slug": self.slug})
 
     def __str__(self):
         return self.title
@@ -41,6 +51,9 @@ class Product(models.Model):
     photo_preview = models.ImageField(upload_to='photo_preview/%Y/%m/%d/', verbose_name='Photo preview', blank=True)
     is_published = models.BooleanField(default=True, verbose_name='Published/Unpublished')
     date_posted = models.DateTimeField(default=timezone.now, blank=True)
+
+    def get_absolute_url(self):
+        return reverse_lazy('product', kwargs={"slug": self.slug})
 
     def __str__(self):
         return self.title

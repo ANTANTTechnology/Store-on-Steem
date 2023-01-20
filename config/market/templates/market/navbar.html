@@ -1,0 +1,113 @@
+{% load static %}
+<div data-component="navbar">
+    <nav class="navbar p-0 fixed-top">
+        <button class="navbar-toggler navbar-toggler-left rounded-0 border-0" type="button" data-toggle="collapse" data-target="#megamenu-dropdown" aria-controls="megamenu-dropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="action-button shadow animate red"> Catalog</i>
+        </button>
+
+        <div><a class="navbar-brand px-1" href="{% url 'index' %}"><img src="{% static 'market/images/indexlogo.png' %}" class="d-inline-block mt-1" alt="AgentFire Logo" height="40"></a>
+
+            <div class="right-links float-right mr-4">
+                <a href="#" class="home"><i class="fa fa-home mr-3"></i></a>
+
+                <div class="d-inline dropdown rounded-0 mx-3">
+                    <a class="dropdown-toggle" id="tools" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-wrench" aria-hidden="true"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right rounded-0 text-center" aria-labelledby="tools">
+                        <a class="dropdown-item px-2" href="#">Recompile CSS</a>
+                    </div>
+                </div> <!-- /.dropdown -->
+
+                <div class="d-inline dropdown mr-3">
+                    <a class="dropdown-toggle" id="notifications" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><span>10</span><i class="fa fa-bell"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right rounded-0 pt-0" aria-labelledby="notifications">
+                        <div class="list-group">
+                            <div class="lg">
+                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+                                    <h5 class="mb-1">Real Estate Marketing Automation: 6 Simple Systems</h5>
+                                    <p class="mb-0">17 October 2016 | 9:32 pm</p>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <h5 class="mb-1">How to Generate Seller Leads For $0.88 Using...</h5>
+                                    <p class="mb-0">3 October 2016 | 9:58 pm</p>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <h5 class="mb-1">AgentFire Re-Opens For Business. New Services,...</h5>
+                                    <p class="mb-0">20 September 2016 | 6:28 pm</p>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <h5 class="mb-1">Real Estate Blogging 101: How To Get Better...</h5>
+                                    <p class="mb-0">7 September 2016 | 3:03 pm</p>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <h5 class="mb-1">How To Get More Listings With Strategic...</h5>
+                                    <p class="mb-0">16 August 2016 | 8:26 pm</p>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <h5 class="mb-1">How To Find Strategic Real Estate Partners as...</h5>
+                                    <p class="mb-0">9 August 2016 | 6:44 pm</p>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <h5 class="mb-1">Top 10 Real Estate Marketing Tools</h5>
+                                    <p class="mb-0">2 August 2016 | 10:25 pm</p>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <h5 class="mb-1">The Beginner Guide To Google Adwords For Real...</h5>
+                                    <p class="mb-0">27 July 2016 | 1:15 am</p>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <h5 class="mb-1">The Complete Guide To Hyper-Local SEO For Realtors</h5>
+                                    <p class="mb-0">19 July 2016 | 5:51 pm</p>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <h5 class="mb-1">How We Took Ed Eakin’s Real Estate Website...</h5>
+                                    <p class="mb-0">11 July 2016 | 6:19 pm</p>
+                                </a>
+                            </div> <!-- /.lg -->
+                        </div> <!-- /.list group -->
+                    </div> <!-- /.dropdown-menu -->
+                </div> <!-- /.dropdown -->
+
+                <div class="d-inline dropdown mr-3">
+                    <a class="dropdown-toggle" id="messages" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-envelope"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right rounded-0 text-center" aria-labelledby="messages">
+                        <a class="dropdown-item">There are no new messages</a>
+                    </div> <!-- /.dropdown-menu -->
+                </div> <!-- /.dropdown -->
+
+
+                <div class="d-inline dropdown">
+                    <a class="dropdown-toggle" id="messages" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+                        <img src="http://1.gravatar.com/avatar/47db31bd2e0b161008607d84c74305b5?s=96&d=mm&r=g">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right rounded-0" aria-labelledby="messages">
+                        <a class="dropdown-item" href="#">Edit my profile</a>
+                        <a class="dropdown-item" href="#">Log Out</a>
+                    </div> <!-- /.dropdown-menu -->
+                </div> <!-- /.dropdown -->
+
+            </div> <!-- /.right-links -->
+
+        </div>
+
+        <div class="megamenu">
+            <div class="collapse navbar-collapse" id="megamenu-dropdown">
+                <div class="megamenu-links">
+                    <div class="row">
+                        <div class="col-md-3 px-0">
+                            <a class="btn rounded-0 border-0 d-flex w-100 justify-content-between p-3 pl-5" data-toggle="collapse" href="#menuOne" aria-expanded="false" aria-controls="collapseExample" id="more">Programming
+                                <i class="fa fa-minus float-right" aria-hidden="true"></i>
+                                <i class="fa fa-plus float-right" aria-hidden="true"></i>
+                            </a> <!-- button close -->
+                            <div class="collapse" id="menuOne">
+                                <div class="list-group border-0">
+                                    {% for cat in categorys %}
+                                    <a href="cat.get_absolute_url" class="list-group-item list-group-item-action border-0 pl-4 py-3">{{ cat.title }}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div></div>
+    </nav>
+</div> <!-- END TOP NAVBAR -->

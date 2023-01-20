@@ -1,25 +1,6 @@
+{% extends 'market/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-    <meta charset="UTF-8">
-    <title>Store on Steemit</title>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-    <link href="{% static 'market/css/sos1.css' %}" rel="stylesheet">
-    <link href="{% static 'market/css/style.css' %}" rel="stylesheet">
-    <link href="{% static 'market/css/carousel.css' %}" rel="stylesheet">
-
-</head>
-<body>
-{% block navbar %}
-{% include 'market/navbar.html' %}
-{% endblock %}
-{% block sidebar %}
-{% include 'market/sidebar.html' %}
-{% endblock %}
-
-<main id="main" class="main">
-    {% block content %}
+{% block content %}
     <div class="container-fluid">
         <div class="row row-cols-1 row-cols-md-3 g-4">
             {% for pro in product %}
@@ -42,10 +23,4 @@
             {% endfor %}
         </div>
     </div>
-    {% endblock %}
-</main>
-<script src="{% static 'market/js/jquery-3.2.1.slim.min.js' %}"></script>
-<script src="{% static 'market/js/popper.min.js' %}"></script>
-<script src="{% static 'market/js/bt.min.js' %}"></script>
-</body>
-</html>
+{% endblock %}

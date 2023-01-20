@@ -1,0 +1,23 @@
+{% extends 'market/base.html' %}
+{% load static %}
+{% block title %}Product/{{ title }}{% endblock %}
+{% block content %}
+<div class="container-fluid p-0">
+  <div class="row">
+    {% for pro in product %}
+    <div class="col-xs-6 col-sm-3">
+      <div class="card">
+        <a href="{{ pro.get_absolute_url }}"><img src="{{pro.photo_preview.url}}" class="card-img-top" alt="..." width="250"></a>
+        <div class="card-body">
+          <h5 class="card-title"><a href="{{ pro.get_absolute_url }}">{{pro.title|truncatewords:5}}</a></h5>
+          <p class="card-text">{{pro.content|safe|linebreaks|truncatewords:25}}</p>
+          <button type="button" class="btn btn-dark">{{pro.price}} STEEM</button>
+          <button type="button" class="btn btn-dark">Buy</button>
+          <a href="{{ c.get_absolute_url }}"><button type="button" class="btn btn-dark">More</button></a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
