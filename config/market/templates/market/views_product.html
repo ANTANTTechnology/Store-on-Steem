@@ -1,26 +1,30 @@
 {% extends 'market/base.html' %}
 {% load static %}
-{% block title %}{{ product.title }}{% endblock %}
+
 {% block content %}
-<div class="container-fluid p-0">
-  <div class="row">
-    <div class="col-sm-8"><h5 class="card-title">{{product.title|truncatewords:5}}</h5></div>
-    <div class="col-sm-4"><img src="{{product.photo_preview.url}}" class="card-img-top" alt="..." width="250"></div>
+<div class="container">
+  <hr class="featurette-divider">
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">{{product.title|truncatewords:5}}</h2>
+      <p class="lead">{{product.shortcontent}}</p>
+      <p><small class="action-button shadow animate blue">Level of difficulty: {{product.levelofdifficulty}}</small></p>
+      <p><small class="action-button shadow animate green">Course duration Hours: {{product.hour}} Minutes: {{product.minutes}}</small></p>
+
+    </div>
+    <div class="col-md-5">
+      <div class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"><img src="{{product.photo_preview.url}}" class="card-img-top" alt="..." width="500" height="500"></div>
+    </div>
   </div>
+  <hr class="featurette-divider">
 
   <div class="row">
-
-    <div class="col-xs-6 col-sm-3">
-      <div class="card">
-        <a href="{{ product.get_absolute_url }}"><img src="{{product.photo_preview.url}}" class="card-img-top" alt="..." width="250"></a>
-        <div class="card-body">
-          <h5 class="card-title"><a href="{{ pro.get_absolute_url }}">{{product.title|truncatewords:5}}</a></h5>
-          <p class="card-text">{{product.content|safe|linebreaks|truncatewords:25}}</p>
-          <button type="button" class="btn btn-dark">{{product.price}} STEEM</button>
-          <button type="button" class="btn btn-dark">Buy</button>
-          <a href="{{ product.get_absolute_url }}"><button type="button" class="btn btn-dark">More</button></a>
-        </div>
-      </div>
+    <div class="col-sm-8">
+      <p class="card-text">{{product.content}}</p>
+    </div>
+    <div class="col-sm-4">
+      <h5>Price: {{product.price}} STEEM</h5>
+      <a href="#" class="action-button shadow animate red">Buy</a>
     </div>
   </div>
 </div>

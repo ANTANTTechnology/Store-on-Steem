@@ -101,7 +101,7 @@
                             <div class="collapse" id="menuOne">
                                 <div class="list-group border-0">
                                     {% for cat in categorys %}
-                                    <a href="cat.get_absolute_url" class="list-group-item list-group-item-action border-0 pl-4 py-3">{{ cat.title }}</a>
+                                    <a href="{{ cat.get_absolute_url }}" class="list-group-item list-group-item-action border-0 pl-4 py-3">{{ cat.title }}</a>
                                     {% endfor %}
                                 </div>
                             </div>
